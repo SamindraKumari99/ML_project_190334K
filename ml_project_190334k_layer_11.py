@@ -271,10 +271,6 @@ print("Best Parameters:", best_params)
 Train the SVC classifier
 """
 
-train_x_trans = train_x[LBL]
-valid_x_trans = valid_x[LBL]
-test_x_trans = test_x[LBL]
-
 classifier = svm.SVC(kernel='rbf',C =1000)
 classifier.fit(train_x_trans, train_y[LBL])
 
