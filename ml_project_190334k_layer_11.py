@@ -278,20 +278,12 @@ test_x_trans = test_x[LBL]
 classifier = svm.SVC(kernel='rbf',C =1000)
 classifier.fit(train_x_trans, train_y[LBL])
 
-classifier = svm.SVC(kernel='rbf',C =10)
-classifier.fit(train_x_trans, train_y[LBL])
-
 """Prediction and evaluation for valid set."""
 
 y_predict_valid = classifier.predict(valid_x_trans)
 print(classification_report(valid_y[LBL], y_predict_valid))
 
-y_predict_valid = classifier.predict(valid_x_trans)
-print(classification_report(valid_y[LBL], y_predict_valid))
-
 """Prediction for test dataset"""
-
-test_y[LBL] = classifier.predict(test_x_trans)
 
 test_y[LBL] = classifier.predict(test_x_trans)
 
